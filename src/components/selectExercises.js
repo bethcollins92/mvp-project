@@ -13,6 +13,12 @@ export default class selectExercises extends Component {
       exercise: exercise
     });
   }
+
+  handleClick(exercise) {
+    this.props.addExercise({ exercise });
+    //want to add something in here to show a tick box at the top being ticked when the exercise has been chosen.
+  }
+
   render() {
     return (
       <div>
@@ -28,7 +34,7 @@ export default class selectExercises extends Component {
               <p>{this.props.exercise.description}</p>
               <p>{this.props.exercise.tips}</p>
               <button
-                // onClick={() => this.handleClick(this.state.exercise)}
+                onClick={() => this.handleClick(this.props.exercise)}
                 type="button"
                 class="btn btn-outline-warning"
               >

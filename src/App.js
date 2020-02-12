@@ -10,13 +10,13 @@ class App extends React.Component {
     super(props);
     this.state = {
       data,
-      exercise: {}
+      selectedExercises: []
     };
   }
 
-  showExercise(exercise) {
+  addExercise(exercise) {
     this.setState({
-      exercise: exercise
+      selectedExercises: exercise
     });
   }
 
@@ -24,8 +24,11 @@ class App extends React.Component {
     return (
       <div>
         <h1>Feel Better in 15</h1>
-        <selectExercises />
-        <chooseTime />
+        <selectExercises
+          data={this.state.data}
+          addExercise={selected => this.addExercise(selected)}
+        />
+        <chooseTime selectedExercises={this.state.selectedExercises} />
       </div>
     );
   }
