@@ -1,52 +1,60 @@
-//heart
-
-({
-  "title": "Gratitude Practice",
-  "time": "A nice time to do this health snack is before you go to sleep at night.",
-  "description": "Write down 5 things from the day you are grateful for. This could be the barista who served you coffee this morning made it just the way you like it, or your partner did the laundry before you got home. No act of kindness is too small to feel grateful for!",
-  "tips": "Tips: leave your pen and notepad on your pillow to remind you to do your health snack. The more specific you are about what you are grateful for, the better."
-},
 {
-  "title": "Tea Ritual",
-  "time": "A great time for this is after dinner, and before bed.",
-  "description": "Spend 5 minutes with a cup of herbel tea, sat across from your partner or someone you live with, free from all devices and distractions. Ask each them about their day, how they are feeling and listen attentively.",
-  "tips": "Tips: Try to have a hot drink with no caffeine as this can affect your sleep."
-},
-{
-  "title": "Phone a Friend",
-  "time": "This health snack will depend on yours and their schedule, speak to your friend before you plan a time",
-  "description": "Call a close friend, someone you really care about. Talk about your day, maybe things that made you laugh (or cry!), try to be as real as you can. It's important to ask them about theirs and listen without judgement.",
-  "tips": "Tips: Try to have a hot drink with no caffeine as this can affect your sleep."
-},
-{
-  "title": "Gratitude game",
-  "time": "Play the gratitude game with anyone, friends or family. Timing isn't important but at the dinner table could be a nice time to try!",
-  "description": "The game includes 3 questions that everyone playing has to answer. 1. What have you done today for someone else? 2. What has someone else done today for you? 3. What have you learned today?",
-  "tips": "Tips: It doesn't have to be a grand gesture! Maybe someone held the door open for you, or smiled at you on the train. It might be difficult to think at first but the more you do it, the easier it becomes."
-},
-{
-  "title": "Celebrate Others",
-  "time": "Choose a time that works for you, and leave your notepad close by to make it as smooth as possible.",
-  "description": "Take 5 minutes to yourself, and choose someone in your life who you really appreciate. Wrtie down everything positive you can think of about this person. This can be things they do for you, or aspects of their personality.",
-  "tips": "Tips: You can choose the same person every day or someone different, someone you have a simple relationship with, or a difficult one, it's up to you. Just make sure the thoughts are positive."
-},
-//mind
-
-{
-  "title": "5 minutes in nature",
-  "time": "Choose a time that will work for you each day.",
-  "description": "Spend 5 minutes just 'being' in nature. This can be standing in your garden with no distractions, just listening to the birds or looking at the trees and appreciating the colours. Touch the leaves, listen to the wind or look at the stars. It doesn't matter where you are, just try to connect with the nature around you.",
-  "tips": "Tips: Try to do this health snack without any electronic device, just you, the trees and the birds and bees!"
-},
-{
-  "title": "Simple breathing",
-  "time": "You can actually do this health snack throughout the day multiple times if you feel stressed or overwhelmed. But 5 minutes before bed can really set you up for a peaceful nights sleep",
-  "description": "Sit alone in a comfortable place, and close your eyes. Notice your breathe flowing in and out of your body, notice where you feel it most. Maybe in your stomach, in your nose or in your chest. Rest your mind on this movement. If you get distracted (which you will!), catch yourself and gently bring your attention back to the breath.",
-  "tips": "Tips: Don't feel frustrated if your mind wanders, it's totally normal! When you realise it's wandered, just gently bring it back to focusing on the breath without judgement."
-},
-{
-  "title": "Simple breathing",
-  "time": "You can actually do this health snack throughout the day multiple times if you feel stressed or overwhelmed. But 5 minutes before bed can really set you up for a peaceful nights sleep",
-  "description": "Sit alone in a comfortable place, and close your eyes. Notice your breathe flowing in and out of your body, notice where you feel it most. Maybe in your stomach, in your nose or in your chest. Rest your mind on this movement. If you get distracted (which you will!), catch yourself and gently bring your attention back to the breath.",
-  "tips": "Tips: Don't feel frustrated if your mind wanders, it's totally normal! When you realise it's wandered, just gently bring it back to focusing on the breath without judgement."
-})
+  "heart": [
+    {
+      "title": "Gratitude Practice",
+      "time": "A nice time to do this health snack is before you go to sleep at night.",
+      "description": "Write down 5 things from the day you are grateful for. This could be the barista who served you coffee this morning made it just the way you like it, or your partner did the laundry before you got home. No act of kindness is too small to feel grateful for!",
+      "tips": "Tips: leave your pen and notepad on your pillow to remind you to do your health snack. The more specific you are about what you are grateful for, the better."
+    },
+    {
+      "title": "Tea Ritual",
+      "time": "A great time for this is after dinner, and before bed.",
+      "description": "Spend 5 minutes with a cup of herbel tea, sat across from your partner or someone you live with, free from all devices and distractions. Ask each them about their day, how they are feeling and listen attentively.",
+      "tips": "Tips: Try to have a hot drink with no caffeine as this can affect your sleep."
+    },
+    {
+      "title": "Phone a Friend",
+      "time": "This health snack will depend on yours and their schedule, speak to your friend before you plan a time",
+      "description": "Call a close friend, someone you really care about. Talk about your day, maybe things that made you laugh (or cry!), try to be as real as you can. It's important to ask them about theirs and listen without judgement.",
+      "tips": "Tips: Try to have a hot drink with no caffeine as this can affect your sleep."
+    },
+    {
+      "title": "Gratitude game",
+      "time": "Play the gratitude game with anyone, friends or family. Timing isn't important but at the dinner table could be a nice time to try!",
+      "description": "The game includes 3 questions that everyone playing has to answer. 1. What have you done today for someone else? 2. What has someone else done today for you? 3. What have you learned today?",
+      "tips": "Tips: It doesn't have to be a grand gesture! Maybe someone held the door open for you, or smiled at you on the train. It might be difficult to think at first but the more you do it, the easier it becomes."
+    },
+    {
+      "title": "Celebrate Others",
+      "time": "Choose a time that works for you, and leave your notepad close by to make it as smooth as possible.",
+      "description": "Take 5 minutes to yourself, and choose someone in your life who you really appreciate. Wrtie down everything positive you can think of about this person. This can be things they do for you, or aspects of their personality.",
+      "tips": "Tips: You can choose the same person every day or someone different, someone you have a simple relationship with, or a difficult one, it's up to you. Just make sure the thoughts are positive."
+    }
+  ],
+  "mind": [
+    {
+      "title": "5 minutes in nature",
+      "time": "Choose a time that will work for you each day.",
+      "description": "Spend 5 minutes just 'being' in nature. This can be standing in your garden with no distractions, just listening to the birds or looking at the trees and appreciating the colours. Touch the leaves, listen to the wind or look at the stars. It doesn't matter where you are, just try to connect with the nature around you.",
+      "tips": "Tips: Try to do this health snack without any electronic device, just you, the trees and the birds and bees!"
+    },
+    {
+      "title": "Simple breathing",
+      "time": "You can actually do this health snack throughout the day multiple times if you feel stressed or overwhelmed. But 5 minutes before bed can really set you up for a peaceful nights sleep",
+      "description": "Sit alone in a comfortable place, and close your eyes. Notice your breathe flowing in and out of your body, notice where you feel it most. Maybe in your stomach, in your nose or in your chest. Rest your mind on this movement. If you get distracted (which you will!), catch yourself and gently bring your attention back to the breath.",
+      "tips": "Tips: Don't feel frustrated if your mind wanders, it's totally normal! When you realise it's wandered, just gently bring it back to focusing on the breath without judgement."
+    },
+    {
+      "title": "5 minutes of flow",
+      "time": "Do this health snack any time you normally have 5 minutes to yourself. Maybe when you get in from work or first thing in the morning.",
+      "description": "Flow is a state of mind where you are completely present in the moment, with no thoughts about the past or future. Doing something creative is a great way to reach this state, maybe you enjoy colouring, or playing an instrument, reading or cooking. The activity isn't important, but it should keep your attention and make you feel relaxed.",
+      "tips": "Tips: If you enjoyed something as a child, chances are you will enjoy it now! Keep trying different activities until you find the one for you."
+    },
+    {
+      "title": "Breath counting",
+      "time": "You can actually do this health snack throughout the day multiple times if you feel stressed or overwhelmed. But 5 minutes before bed can really set you up for a peaceful nights sleep",
+      "description": "Sit alone in a quiet place. ",
+      "tips": "Tips: If you enjoyed something as a child, chances are you will enjoy it now! Keep trying different activities until you find the one for you."
+    }
+  ]
+}
