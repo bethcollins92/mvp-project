@@ -23,26 +23,25 @@ export default class selectExercises extends Component {
 
   render() {
     return (
-      <div>
-        <div></div>
+      <div className="container">
         <div className="card shadow">
           <div className="row">
             <div className="col-md -3 mb-5 mt-5 ml-5">
               <img
-                src={this.props.exercise.img}
+                src={this.state.exercise.img}
                 className="img-fluid"
                 alt="alt"
               />
             </div>
             <div className="col-md -9 mt-5">
-              <h1>{this.props.exercise.title}</h1>
-              <p>{this.props.exercise.time}</p>
-              <p>{this.props.exercise.description}</p>
-              <p>{this.props.exercise.tips}</p>
+              <h1>{this.state.exercise.title}</h1>
+              <p>{this.state.exercise.time}</p>
+              <p>{this.state.exercise.description}</p>
+              <p>{this.state.exercise.tips}</p>
               <button
-                onClick={() => this.handleClick(this.props.exercise)}
+                onClick={() => this.handleClick(this.state.exercise)}
                 type="button"
-                class="btn btn-outline-warning"
+                className="btn btn-outline-warning"
               >
                 Select
               </button>

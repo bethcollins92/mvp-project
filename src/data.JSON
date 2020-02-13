@@ -53,9 +53,29 @@
     }
   ],
   "body": [
-    { "title": "The power 5" },
-    { "title": "Just Play" },
-    { "title": "Dancing" },
-    { "title": "The HIIT squad" }
+    {
+      "title": "The power 5",
+      "time": "Before lunch or dinner is a great time to try this exercise, as it will improve your metabolism and get your body ready for food.",
+      "description": "Spend 30 seconds on each exercise, and go through the circuit twice. Lunges (both legs equal amount), reverse fly, squat, press-ups and bridge. See video for guidance.",
+      "tips": "Tips: If you can't complete the full 30 seconds then try an easier version of the exercise."
+    },
+    {
+      "title": "Just Play",
+      "time": "This is perfect if you have children or you often spend time with them.",
+      "description": "Play a game you enjoy for 5 minutes, tig, hide and seek, football in the garden, anything you enjoy! This will increase endorphins and you can improve in a skill ",
+      "tips": "Tips: "
+    },
+    {
+      "title": "Dancing",
+      "time": "Try this when you wake up in the morning, or just before you go to bed at night.",
+      "description": "Take a pen and paper, and spend 5 minutes just writing down every thought that comes into your head. Don't judge yourself, nothing is too weird. The more you do this the easier you will find it, and the feeling of getting your thoughts out of your head and onto the paper lifts the weight of them and gives you a sense of freedom.",
+      "tips": "Tips: Don't worry if at first if"
+    },
+    {
+      "title": "The HIIT squad",
+      "time": "Try this when you wake up in the morning, or just before you go to bed at night.",
+      "description": "Take a pen and paper, and spend 5 minutes just writing down every thought that comes into your head. Don't judge yourself, nothing is too weird. The more you do this the easier you will find it, and the feeling of getting your thoughts out of your head and onto the paper lifts the weight of them and gives you a sense of freedom.",
+      "tips": "Tips: Don't worry if at first if"
+    }
   ]
 }

@@ -3,8 +3,9 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import data from "./data.json";
-import selectExercises from "./components/selectExercises";
-import chooseTime from "./components/chooseTime";
+import SelectExercises from "./components/SelectExercises";
+import ChooseTime from "./components/ChooseTime";
+import Plan from "./components/plan";
 
 class App extends React.Component {
   constructor(props) {
@@ -21,6 +22,8 @@ class App extends React.Component {
     });
   }
 
+  chooseTime() {}
+
   render() {
     return (
       <div>
@@ -34,18 +37,24 @@ class App extends React.Component {
                 <li>
                   <Link to="/time">Time</Link>
                 </li>
+                <li>
+                  <Link to="/plan">Plan</Link>
+                </li>
               </ul>
             </nav>
 
             <Switch>
               <Route path="/exercises">
-                <selectExercises
+                <SelectExercises
                   data={this.state.data}
                   addExercise={selected => this.addExercise(selected)}
                 />
               </Route>
               <Route path="/time">
-                <chooseTime selectedExercises={this.state.selectedExercises} />
+                <ChooseTime selectedExercises={this.state.selectedExercises} />
+              </Route>
+              <Route path="/plan">
+                <Plan chooseTime={time => this.chooseTime(time)} />
               </Route>
             </Switch>
           </div>
