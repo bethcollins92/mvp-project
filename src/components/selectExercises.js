@@ -7,26 +7,32 @@ export default class selectExercises extends Component {
       exercise: {}
     };
   }
-
+  //this function is to show more information about the exercise the user clicks on. I want to make it come up in a pop up box.
   showExercise(exercise) {
     this.setState({
       exercise: exercise
     });
   }
-
+  //this function is to send data (the exercise the user has selected)back to the parent App.js
   handleClick(exercise) {
     this.props.addExercise({ exercise });
     //want to add something in here to show a tick box at the top being ticked when the exercise has been chosen.
   }
 
+  //in the choose when button I want to be able to click and move to the chooseTime view.
+
   render() {
     return (
       <div>
-        <button>Choose your time</button>
+        <div></div>
         <div className="card shadow">
           <div className="row">
             <div className="col-md -3 mb-5 mt-5 ml-5">
-              <img src={this.props.exercise.img} className="img-fluid" />
+              <img
+                src={this.props.exercise.img}
+                className="img-fluid"
+                alt="alt"
+              />
             </div>
             <div className="col-md -9 mt-5">
               <h1>{this.props.exercise.title}</h1>
@@ -54,7 +60,7 @@ export default class selectExercises extends Component {
                 className="col-lg-3 col-md-5 col-sm-6"
               >
                 <div className="card shadow">
-                  <img src={exercise.url} className="card-img-top" />
+                  <img src={exercise.url} className="card-img-top" alt="alt" />
                   <div className="card-body">
                     <h3 className="card-title">{exercise.title}</h3>
                   </div>
@@ -74,7 +80,7 @@ export default class selectExercises extends Component {
                 className="col-lg-3 col-md-5 col-sm-6"
               >
                 <div className="card shadow">
-                  <img src={exercise.url} className="card-img-top" />
+                  <img src={exercise.url} className="card-img-top" alt="alt" />
                   <div className="card-body">
                     <h3 className="card-title">{exercise.title}</h3>
                   </div>
@@ -93,7 +99,7 @@ export default class selectExercises extends Component {
                 className="col-lg-3 col-md-5 col-sm-6"
               >
                 <div className="card shadow">
-                  <img src={exercise.url} className="card-img-top" />
+                  <img src={exercise.url} className="card-img-top" alt="alt" />
                   <div className="card-body">
                     <h3 className="card-title">{exercise.title}</h3>
                   </div>

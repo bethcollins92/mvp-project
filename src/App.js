@@ -1,9 +1,10 @@
 import React from "react";
 import "./App.css";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import data from "./data.json";
-import selectExercises from "./components.selectExercises.js";
-import chooseTime from "./components.chooseTime.js";
+import selectExercises from "./components/selectExercises";
+import chooseTime from "./components/chooseTime";
 
 class App extends React.Component {
   constructor(props) {
@@ -16,19 +17,48 @@ class App extends React.Component {
 
   addExercise(exercise) {
     this.setState({
-      selectedExercises: exercise
+      selectedExercises: [...this.state.selectedExercises, exercise]
     });
   }
 
   render() {
     return (
       <div>
-        <h1>Feel Better in 15</h1>
-        <selectExercises
-          data={this.state.data}
-          addExercise={selected => this.addExercise(selected)}
-        />
-        <chooseTime selectedExercises={this.state.selectedExercises} />
+        <Router>
+          <div>
+            <nav>
+              <ul>
+                <li>
+                  <Link to="/exercises">Exercises</Link>
+                </li>
+                <li>
+                  <Link to="/time">Time</Link>
+                </li>
+              </ul>
+            </nav>
+
+            <Switch>
+              <Route path="/exercises">
+                <selectExercises
+                  data={this.state.data}
+                  addExercise={selected => this.addExercise(selected)}
+                />
+              </Route>
+              <Route path="/time">
+                <chooseTime selectedExercises={this.state.selectedExercises} />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
+
+        <div className="container">
+          <h1>Feel Better in 15</h1>
+          <button>About the Program</button>
+          <button>Heart</button>
+          <button>Mind</button>
+          <button>Body</button>
+          <button>Start</button>
+        </div>
       </div>
     );
   }
