@@ -14,9 +14,7 @@ export default class plan extends Component {
               <div key={index}>{exercise.title}</div>
             ))}
         </div>{" "}
-        <div>
-          Show the selected exercises and the times the user has selected
-        </div>
+        <div>{this.props.selectedTime}</div>
       </div>
     );
   }

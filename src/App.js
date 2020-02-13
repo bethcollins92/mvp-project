@@ -12,20 +12,38 @@ class App extends React.Component {
     super(props);
     this.state = {
       data,
-      selectedExercises: []
+      selectedExercises: {
+        heart: {},
+        mind: {},
+        body: {}
+      },
+      selectedTime: {
+        heart: "",
+        mind: "",
+        body: ""
+      }
     };
   }
 
-  addExercise(exercise) {
+  addExercise(exercise, type) {
     this.setState({
-      selectedExercises: [...this.state.selectedExercises, exercise]
+      selectedExercises[type]: exercise
+    })
+  }
+
+  addTime(event, type) {
+    this.setState({
+      selectedTime[type]: event
     });
   }
 
   render() {
     return (
-      <div>
-        <Router>
+      <Router>
+        <div className="container">
+          <h1>Feel Better in 15</h1>
+        </div>
+        <div>
           <div>
             <nav>
               <ul>
@@ -46,23 +64,25 @@ class App extends React.Component {
               <Route path="/exercises">
                 <SelectExercises
                   data={this.state.data}
-                  addExercise={selected => this.addExercise(selected)}
+                  addExercise={(selected, type) =>
+                    this.addExercise(selected, type)
+                  }
+                  addTime={(time, type) => this.addTime(time, type)}
                 />
               </Route>
               <Route path="/about">
                 <About />
               </Route>
               <Route path="/plan">
-                <Plan selectedExercises={this.state.selectedExercises} />
+                <Plan
+                  selectedExercises={this.state.selectedExercises}
+                  selectedTime={this.state.selectedTime}
+                />
               </Route>
             </Switch>
           </div>
-        </Router>
-
-        <div className="container">
-          <h1>Feel Better in 15</h1>
         </div>
-      </div>
+      </Router>
     );
   }
 }

@@ -4,18 +4,27 @@ export default class selectExercises extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      exercise: {}
+      exercise: {},
+      type: ""
     };
   }
   //this function is to show more information about the exercise the user clicks on. I want to make it come up in a pop up box.
-  showExercise(exercise) {
+  showExercise(exercise, type) {
     this.setState({
-      exercise: exercise
+      exercise,
+      type
     });
   }
   //this function is to send data (the exercise the user has selected)back to the parent App.js to be stored in the selectedExercises array.
-  handleClick(exercise) {
-    this.props.addExercise({ exercise });
+  handleClick() {
+    this.props.addExercise({
+      exercise: this.state.exercise,
+      type: this.state.type
+    });
+  }
+
+  handleChange(event) {
+    this.props.addTime(event.target.value, { type: this.state.type });
   }
 
   render() {
@@ -35,6 +44,10 @@ export default class selectExercises extends Component {
               <p>{this.state.exercise.time}</p>
               <p>{this.state.exercise.description}</p>
               <p>{this.state.exercise.tips}</p>
+              <input
+                onChange={event => this.handleChange(event)}
+                type="time"
+              ></input>
               <button
                 onClick={() => this.handleClick(this.state.exercise)}
                 type="button"
@@ -52,11 +65,11 @@ export default class selectExercises extends Component {
             {this.props.data.heart.map((exercise, index) => (
               <div
                 key={index}
-                onClick={() => this.showExercise(exercise)}
+                onClick={() => this.showExercise(exercise, "heart")}
                 className="col-lg-3 col-md-5 col-sm-6"
               >
                 <div className="card shadow">
-                  <img src={exercise.url} className="card-img-top" alt="alt" />
+                  <img src={exercise.img} className="card-img-top" alt="alt" />
                   <div className="card-body">
                     <h3 className="card-title">{exercise.title}</h3>
                   </div>
@@ -66,17 +79,17 @@ export default class selectExercises extends Component {
           </div>
         </div>
         <div>
-          <h4>Mind</h4>
+          <h4 className="mt-4">Mind</h4>
 
           <div className="row mt-5">
             {this.props.data.mind.map((exercise, index) => (
               <div
                 key={index}
-                onClick={() => this.showExercise(exercise)}
+                onClick={() => this.showExercise(exercise, "mind")}
                 className="col-lg-3 col-md-5 col-sm-6"
               >
                 <div className="card shadow">
-                  <img src={exercise.url} className="card-img-top" alt="alt" />
+                  <img src={exercise.img} className="card-img-top" alt="alt" />
                   <div className="card-body">
                     <h3 className="card-title">{exercise.title}</h3>
                   </div>
@@ -86,16 +99,16 @@ export default class selectExercises extends Component {
           </div>
         </div>
         <div>
-          <h4>Body</h4>
+          <h4 className="mt-4">Body</h4>
           <div className="row mt-5">
             {this.props.data.body.map((exercise, index) => (
               <div
                 key={index}
-                onClick={() => this.showExercise(exercise)}
+                onClick={() => this.showExercise(exercise, "body")}
                 className="col-lg-3 col-md-5 col-sm-6"
               >
                 <div className="card shadow">
-                  <img src={exercise.url} className="card-img-top" alt="alt" />
+                  <img src={exercise.img} className="card-img-top" alt="alt" />
                   <div className="card-body">
                     <h3 className="card-title">{exercise.title}</h3>
                   </div>
