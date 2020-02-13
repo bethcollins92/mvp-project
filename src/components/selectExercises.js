@@ -13,13 +13,10 @@ export default class selectExercises extends Component {
       exercise: exercise
     });
   }
-  //this function is to send data (the exercise the user has selected)back to the parent App.js
+  //this function is to send data (the exercise the user has selected)back to the parent App.js to be stored in the selectedExercises array.
   handleClick(exercise) {
     this.props.addExercise({ exercise });
-    //want to add something in here to show a tick box at the top being ticked when the exercise has been chosen.
   }
-
-  //in the choose when button I want to be able to click and move to the chooseTime view.
 
   render() {
     return (

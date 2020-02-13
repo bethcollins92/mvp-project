@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 import data from "./data.json";
 import SelectExercises from "./components/SelectExercises";
-import ChooseTime from "./components/ChooseTime";
-import Plan from "./components/plan";
+import About from "./components/About";
+import Plan from "./components/Plan";
 
 class App extends React.Component {
   constructor(props) {
@@ -22,8 +22,6 @@ class App extends React.Component {
     });
   }
 
-  chooseTime() {}
-
   render() {
     return (
       <div>
@@ -32,13 +30,14 @@ class App extends React.Component {
             <nav>
               <ul>
                 <li>
+                  <Link to="/about">About</Link>
+                </li>
+                <li>
                   <Link to="/exercises">Exercises</Link>
                 </li>
+
                 <li>
-                  <Link to="/time">Time</Link>
-                </li>
-                <li>
-                  <Link to="/plan">Plan</Link>
+                  <Link to="/plan">Your Plan</Link>
                 </li>
               </ul>
             </nav>
@@ -50,11 +49,11 @@ class App extends React.Component {
                   addExercise={selected => this.addExercise(selected)}
                 />
               </Route>
-              <Route path="/time">
-                <ChooseTime selectedExercises={this.state.selectedExercises} />
+              <Route path="/about">
+                <About />
               </Route>
               <Route path="/plan">
-                <Plan chooseTime={time => this.chooseTime(time)} />
+                <Plan selectedExercises={this.state.selectedExercises} />
               </Route>
             </Switch>
           </div>
@@ -62,11 +61,6 @@ class App extends React.Component {
 
         <div className="container">
           <h1>Feel Better in 15</h1>
-          <button>About the Program</button>
-          <button>Heart</button>
-          <button>Mind</button>
-          <button>Body</button>
-          <button>Start</button>
         </div>
       </div>
     );
