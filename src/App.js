@@ -41,7 +41,7 @@ class App extends React.Component {
     return (
       <Router>
         <div className="container">
-          <h1>Feel Better in 15</h1>
+          <h1 className="text-center mt-4">Feel Better in 15</h1>
         </div>
         <div>
           <div>
