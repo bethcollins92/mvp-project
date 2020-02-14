@@ -1,11 +1,12 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import data from "./data.json";
 import SelectExercises from "./components/SelectExercises";
 import About from "./components/About";
 import Plan from "./components/Plan";
+import NavBar from "./components/NavBar";
 
 class App extends React.Component {
   constructor(props) {
@@ -41,24 +42,32 @@ class App extends React.Component {
     return (
       <Router>
         <div className="container">
-          <h1 className="text-center mt-4">Feel Better in 15</h1>
+          <h1 className=" text-center mt-4" id="title">
+            Feel Better in 5
+          </h1>
         </div>
+
         <div>
           <div>
-            <nav>
-              <ul>
-                <li>
-                  <Link to="/about">About</Link>
-                </li>
-                <li>
-                  <Link to="/exercises">Exercises</Link>
-                </li>
+            <NavBar />
+            <div className="container">
+              <div className="row justify-content-center">
+                <div className="col-6">
+                  <div className="card text-center mt-3 mb-3" id="title">
+                    IT ONLY TAKES 5 MINUTES TO START CHANGING YOUR LIFE. FOR
+                    GOOD.
+                  </div>
+                  <img
+                    id="image"
+                    className="card text-center"
+                    src="https://lamenteesmaravillosa.com/wp-content/uploads/2017/09/cuadrados-formando-palabra-wellness-1024x683.jpg"
+                    alt="alt"
+                  />
+                </div>
+              </div>
+            </div>
 
-                <li>
-                  <Link to="/plan">Your Plan</Link>
-                </li>
-              </ul>
-            </nav>
+            <div></div>
 
             <Switch>
               <Route path="/exercises">

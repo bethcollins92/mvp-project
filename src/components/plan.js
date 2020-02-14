@@ -8,7 +8,9 @@ export default class plan extends Component {
   render() {
     return (
       <div className="container">
-        <h2 className="text-center mb-4">Your Plan</h2>
+        <h2 className="text-center mb-4" id="title">
+          Your Plan
+        </h2>
         <div className="row justify-content-center">
           <div className="col-4">
             <div className="card shadow text-center mb-2">
