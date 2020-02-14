@@ -24,16 +24,16 @@ class App extends React.Component {
       }
     };
   }
-
+  //how do I specify whether its selected exercise or time?
   addExercise(exercise, type) {
     this.setState({
-      selectedExercises[type]: exercise
-    })
+      selectedExercises: { ...this.state.selectedExercises, [type]: exercise }
+    });
   }
 
   addTime(event, type) {
     this.setState({
-      selectedTime[type]: event
+      selectedTime: { ...this.state.selectedTime, [type]: event }
     });
   }
 

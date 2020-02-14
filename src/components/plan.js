@@ -8,13 +8,12 @@ export default class plan extends Component {
   render() {
     return (
       <div>
-        <div>
-          {this.props.selectedExercises &&
-            this.props.selectedExercises.map((exercise, index) => (
-              <div key={index}>{exercise.title}</div>
-            ))}
-        </div>{" "}
-        <div>{this.props.selectedTime}</div>
+        <div>{this.props.selectedExercises.heart.title}</div>
+        <div>{this.props.selectedExercises.mind.title}</div>
+        <div>{this.props.selectedExercises.body.title}</div>
+        <div>{this.props.selectedTime.heart}</div>
+        <div>{this.props.selectedTime.mind}</div>
+        <div>{this.props.selectedTime.body}</div>
       </div>
     );
   }
