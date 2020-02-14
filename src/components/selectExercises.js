@@ -17,10 +17,7 @@ export default class selectExercises extends Component {
   }
   //this function is to send data (the exercise the user has selected)back to the parent App.js to be stored in the selectedExercises array.
   handleClick() {
-    this.props.addExercise({
-      exercise: this.state.exercise,
-      type: this.state.type
-    });
+    this.props.addExercise(this.state.exercise, this.state.type);
   }
 
   handleChange(event) {

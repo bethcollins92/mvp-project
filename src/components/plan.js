@@ -7,13 +7,56 @@ export default class plan extends Component {
   }
   render() {
     return (
-      <div>
-        <div>{this.props.selectedExercises.heart.title}</div>
-        <div>{this.props.selectedExercises.mind.title}</div>
-        <div>{this.props.selectedExercises.body.title}</div>
-        <div>{this.props.selectedTime.heart}</div>
-        <div>{this.props.selectedTime.mind}</div>
-        <div>{this.props.selectedTime.body}</div>
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-4">
+            <div className="card shadow text-center">
+              <img
+                src={this.props.selectedExercises.heart.img}
+                className="card-img-top"
+                alt="alt"
+              />
+              <div className="card-body">
+                <h3 className="card-title">
+                  {this.props.selectedExercises.heart.title}
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="row justify-content-center">
+          <div className="col-4">
+            <div className="card shadow text-center">
+              <img
+                src={this.props.selectedExercises.mind.img}
+                className="card-img-top"
+                alt="alt"
+              />
+              <div className="card-body">
+                <h3 className="card-title">
+                  {this.props.selectedExercises.mind.title}
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="row justify-content-center">
+          <div className="col-4">
+            <div className="card shadow text-center">
+              <img
+                src={this.props.selectedExercises.body.img}
+                className="card-img-top"
+                alt="alt"
+              />
+              <div className="card-body">
+                <h3 className="card-title">
+                  {this.props.selectedExercises.body.title}
+                </h3>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
