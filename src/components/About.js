@@ -11,8 +11,8 @@ export default class chooseTime extends Component {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-6">
-            <div className="card" id="title">
-              <p id="title">
+            <div className="card" id="about-text">
+              <p id="about-text">
                 ‘Trying to be healthy can be overwhelming – what if all it took
                 to make a real difference was 5 minutes of your day?’ If you’ve
                 ever started an intensive plan only to stop days, weeks or

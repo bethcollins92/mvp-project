@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-export default class NavBar extends Component {
+import { Link, withRouter } from "react-router-dom";
+class NavBar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <Link to="/" className="navbar-brand">
-          Home
-        </Link>
+      <nav
+        className="navbar navbar-expand-lg navbar-light bg-light"
+        id="navbar"
+      >
         <button
           className="navbar-toggler"
           type="button"
@@ -20,17 +20,42 @@ export default class NavBar extends Component {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
-            <li className="nav-item active">
+            <li
+              className={
+                "nav-item" +
+                (this.props.location.pathname === "/" ? " active" : "")
+              }
+            >
+              <Link to="/" className="nav-link">
+                Home
+              </Link>
+            </li>
+            <li
+              className={
+                "nav-item" +
+                (this.props.location.pathname === "/about" ? " active" : "")
+              }
+            >
               <Link to="/about" className="nav-link">
                 About
               </Link>
             </li>
-            <li className="nav-item">
+            <li
+              className={
+                "nav-item" +
+                (this.props.location.pathname === "/exercises" ? " active" : "")
+              }
+            >
               <Link to="/exercises" className="nav-link">
                 Exercises
               </Link>
             </li>
-            <li className="nav-item">
+            <li
+              className={
+                "nav-item" +
+                (this.props.location.pathname === "/plan" ? " active" : "")
+              }
+            >
               <Link to="/plan" className="nav-link">
                 Your plan
               </Link>
@@ -41,3 +66,5 @@ export default class NavBar extends Component {
     );
   }
 }
+
+export default withRouter(NavBar);

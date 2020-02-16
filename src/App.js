@@ -7,6 +7,7 @@ import SelectExercises from "./components/SelectExercises";
 import About from "./components/About";
 import Plan from "./components/Plan";
 import NavBar from "./components/NavBar";
+import Home from "./components/Home";
 
 class App extends React.Component {
   constructor(props) {
@@ -33,6 +34,7 @@ class App extends React.Component {
   }
 
   addTime(event, type) {
+    console.log({ event, type });
     this.setState({
       selectedTime: { ...this.state.selectedTime, [type]: event }
     });
@@ -42,7 +44,7 @@ class App extends React.Component {
     return (
       <Router>
         <div className="container">
-          <h1 className=" text-center mt-4" id="title">
+          <h1 className=" text-center mt-4" id="main-title">
             Feel Better in 5
           </h1>
         </div>
@@ -50,24 +52,6 @@ class App extends React.Component {
         <div>
           <div>
             <NavBar />
-            <div className="container">
-              <div className="row justify-content-center">
-                <div className="col-6">
-                  <div className="card text-center mt-3 mb-3" id="title">
-                    IT ONLY TAKES 5 MINUTES TO START CHANGING YOUR LIFE. FOR
-                    GOOD.
-                  </div>
-                  <img
-                    id="image"
-                    className="card text-center"
-                    src="https://lamenteesmaravillosa.com/wp-content/uploads/2017/09/cuadrados-formando-palabra-wellness-1024x683.jpg"
-                    alt="alt"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div></div>
 
             <Switch>
               <Route path="/exercises">
@@ -87,6 +71,10 @@ class App extends React.Component {
                   selectedExercises={this.state.selectedExercises}
                   selectedTime={this.state.selectedTime}
                 />
+              </Route>
+
+              <Route path="/">
+                <Home />
               </Route>
             </Switch>
           </div>
