@@ -18,7 +18,7 @@ con.connect(function(err) {
   if (err) throw err;
   console.log("Connected!");
 
-  let sql = `DROP TABLE if exists heart_exercises; CREATE TABLE heart_exercises(id INT NOT NULL AUTO_INCREMENT,title varchar(455) NOT NULL,time varchar(455) NOT NULL,description varchar(1000) NOT NULL,tips varchar(455) NOT NULL,img varchar(455) NOT NULL,PRIMARY KEY (id));`;
+  let sql = `DROP TABLE if exists heart_exercises; CREATE TABLE heart_exercises(id INT NOT NULL AUTO_INCREMENT,title varchar(255) NOT NULL,time varchar(255) NOT NULL,description text(1000) NOT NULL,tips varchar(255) NOT NULL,img varchar(255) NOT NULL,PRIMARY KEY (id));`;
   con.query(sql, function(err, result) {
     if (err) throw err;
     console.log("Table creation `heart exercises` was successful!");
@@ -26,7 +26,7 @@ con.connect(function(err) {
     console.log("Closing...");
   });
 
-  sql = `DROP TABLE if exists mind_exercises; CREATE TABLE mind_exercises(	id INT NOT NULL AUTO_INCREMENT,title varchar(455) NOT NULL,time varchar(455) NOT NULL,description varchar(1000) NOT NULL,tips varchar(455) NOT NULL,img varchar(455) NOT NULL,PRIMARY KEY (id));`;
+  sql = `DROP TABLE if exists mind_exercises; CREATE TABLE mind_exercises(	id INT NOT NULL AUTO_INCREMENT,title varchar(255) NOT NULL,time varchar(255) NOT NULL,description text(1000) NOT NULL,tips varchar(255) NOT NULL,img varchar(255) NOT NULL,PRIMARY KEY (id));`;
   con.query(sql, function(err, result) {
     if (err) throw err;
     console.log("Table creation `mind exercises` was successful!");
@@ -34,7 +34,7 @@ con.connect(function(err) {
     console.log("Closing...");
   });
 
-  sql = `DROP TABLE if exists body_exercises; CREATE TABLE body_exercises(id INT NOT NULL AUTO_INCREMENT,title varchar(455) NOT NULL,time varchar(455) NOT NULL,description varchar(1000) NOT NULL,tips varchar(455) NOT NULL,img varchar(455) NOT NULL,PRIMARY KEY (id));`;
+  sql = `DROP TABLE if exists body_exercises; CREATE TABLE body_exercises(id INT NOT NULL AUTO_INCREMENT,title varchar(255) NOT NULL,time varchar(255) NOT NULL,description text(1000) NOT NULL,tips varchar(255) NOT NULL,img varchar(255) NOT NULL,PRIMARY KEY (id));`;
   con.query(sql, function(err, result) {
     if (err) throw err;
     console.log("Table creation `body exercises` was successful!");
