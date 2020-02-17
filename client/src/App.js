@@ -2,7 +2,6 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import data from "./data.json.js";
 import SelectExercises from "./components/SelectExercises";
 import About from "./components/About";
 import Plan from "./components/Plan";

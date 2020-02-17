@@ -36,4 +36,9 @@ app.use(function(err, req, res, next) {
   res.send("error");
 });
 
+//cron jobs
+cron.schedule("* * * * *", function() {
+  console.log("running a task every minute");
+});
+
 module.exports = app;

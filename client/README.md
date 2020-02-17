@@ -4,18 +4,19 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
-### `yarn start`
+### Dependencies
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Run `yarn` on root folder to install dependencies related to Express.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+`cd client` and run `yarn` install dependencies related to React.
 
-### `yarn test`
+### Run Your Development Servers
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Run `yarn start` in project directory to start the Express server on port 5000
+- `cd client` and run `yarn start` to start client server in development mode with hot reloading in port 3000.
+- Client is configured so all API calls will be proxied to port 5000 for a smoother development experience. Yay!
+- You can test your client app in `http://localhost:3000`
+- You can test your API in `http://localhost:5000/api`
 
 ## Learn More
 
