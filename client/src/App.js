@@ -16,6 +16,7 @@ class App extends React.Component {
       heart: [],
       mind: [],
       body: [],
+
       selectedExercises: {
         heart: {},
         mind: {},
@@ -96,7 +97,9 @@ class App extends React.Component {
             <Switch>
               <Route path="/exercises">
                 <SelectExercises
-                  data={this.state.data}
+                  heart={this.state.heart}
+                  mind={this.state.mind}
+                  body={this.state.body}
                   addExercise={(selected, type) =>
                     this.addExercise(selected, type)
                   }

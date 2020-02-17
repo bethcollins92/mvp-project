@@ -87,7 +87,7 @@ export default class selectExercises extends Component {
         <div id="exercise-section">
           <h4 className="mt-4">Heart</h4>
           <div className="row mt-5">
-            {this.props.data.heart.map((exercise, index) => (
+            {this.props.heart.map((exercise, index) => (
               <div
                 key={index}
                 onClick={() => this.showExercise(exercise, "heart")}
@@ -111,7 +111,7 @@ export default class selectExercises extends Component {
         <div id="exercise-section">
           <h4 className="mt-4">Mind</h4>
           <div className="row mt-5">
-            {this.props.data.mind.map((exercise, index) => (
+            {this.props.mind.map((exercise, index) => (
               <div
                 key={index}
                 onClick={() => this.showExercise(exercise, "mind")}
@@ -135,7 +135,7 @@ export default class selectExercises extends Component {
         <div id="exercise-section">
           <h4 className="mt-4">Body</h4>
           <div className="row mt-5">
-            {this.props.data.body.map((exercise, index) => (
+            {this.props.body.map((exercise, index) => (
               <div
                 key={index}
                 onClick={() => this.showExercise(exercise, "body")}
