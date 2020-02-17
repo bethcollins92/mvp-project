@@ -13,7 +13,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data,
+      heart: [],
+      mind: [],
+      body: [],
       selectedExercises: {
         heart: {},
         mind: {},
@@ -26,7 +28,45 @@ class App extends React.Component {
       }
     };
   }
-  //how do I specify whether its selected exercise or time?
+
+  componentDidMount = () => {
+    fetch("/heart_exercises")
+      .then(res => res.json())
+      .then(json => {
+        this.setState({
+          heart: json
+        });
+        console.log(json);
+      })
+      .catch(err => {
+        this.setState({ error: err });
+      });
+
+    fetch("/mind_exercises")
+      .then(res => res.json())
+      .then(json => {
+        this.setState({
+          mind: json
+        });
+        console.log(json);
+      })
+      .catch(err => {
+        this.setState({ error: err });
+      });
+
+    fetch("/body_exercises")
+      .then(res => res.json())
+      .then(json => {
+        this.setState({
+          body: json
+        });
+        console.log(json);
+      })
+      .catch(err => {
+        this.setState({ error: err });
+      });
+  };
+
   addExercise(exercise, type) {
     this.setState({
       selectedExercises: { ...this.state.selectedExercises, [type]: exercise }
