@@ -18,6 +18,8 @@ Run `yarn` on root folder to install dependencies related to Express.
 - You can test your client app in `http://localhost:3000`
 - You can test your API in `http://localhost:5000/api`
 
+## Database layout
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).

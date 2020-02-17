@@ -71,6 +71,7 @@ export default class plan extends Component {
             </div>
           </div>
         )}
+        <button className="btn btn-group-info">Save</button>
       </div>
     );
   }

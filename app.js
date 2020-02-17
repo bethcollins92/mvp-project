@@ -7,6 +7,7 @@ var logger = require("morgan");
 var heartExercisesRouter = require("./routes/heart_exercises");
 var mindExercisesRouter = require("./routes/mind_exercises");
 var bodyExercisesRouter = require("./routes/body_exercises");
+var yourPlanRouter = require("./routes/your_plan");
 
 var app = express();
 
@@ -19,7 +20,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/mind_exercises", mindExercisesRouter);
 app.use("/heart_exercises", heartExercisesRouter);
 app.use("/body_exercises", bodyExercisesRouter);
-
+app.use("/your_plan", yourPlanRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
