@@ -34,4 +34,78 @@ app.use(function(err, req, res, next) {
   res.send("error");
 });
 
+app.get("/heart_exercises", (req, res) => {
+  db("SELECT * FROM heart_exercises ORDER BY id ASC;")
+    .then(results => {
+      res.send(results.data);
+    })
+    .catch(err => res.status(500).send(err));
+});
+
+app.get("/heart_exercises/:id", (req, res) => {
+  db(`SELECT * FROM heart_exercises WHERE id = ${req.params.id}`)
+    .then(results => {
+      res.send(results.data);
+    })
+    .catch(err => res.status(500).send(err));
+});
+
+app.post("/heart_exercises", (req, res) => {
+  db(
+    `INSERT INTO heart_exercises (title, time, description, tips, img) VALUES ("${req.body.title}, ${req.body.time}, ${req.body.description}, ${req.body.tips}, ${req.body.img}");`
+  )
+    .then(results => {
+      db("SELECT * FROM items ORDER BY id ASC;")
+        .then(results => {
+          res.send(results.data);
+        })
+        .catch(err => res.status(500).send(err));
+    })
+    .catch(err => res.status(500).send(err));
+});
+
+app.delete("/heart_exercises/:id", (req, res) => {
+  db(`DELETE FROM heart_exercises WHERE id = ${req.params.id}`)
+    .then(results => {
+      db("SELECT * FROM heart_exercises ORDER BY id ASC;")
+        .then(results => {
+          res.send(results.data);
+        })
+        .catch(err => res.status(500).send(err));
+    })
+    .catch(err => res.status(500).send(err));
+});
+
+app.get("/mind_exercises", (req, res) => {
+  db("SELECT * FROM mind_exercises ORDER BY id ASC;")
+    .then(results => {
+      res.send(results.data);
+    })
+    .catch(err => res.status(500).send(err));
+});
+
+app.get("/mind_exercises/:id", (req, res) => {
+  db(`SELECT * FROM mind_exercises WHERE id = ${req.params.id}`)
+    .then(results => {
+      res.send(results.data);
+    })
+    .catch(err => res.status(500).send(err));
+});
+
+app.get("/body_exercises", (req, res) => {
+  db("SELECT * FROM body_exercises ORDER BY id ASC;")
+    .then(results => {
+      res.send(results.data);
+    })
+    .catch(err => res.status(500).send(err));
+});
+
+app.get("/body_exercises/:id", (req, res) => {
+  db(`SELECT * FROM body_exercises WHERE id = ${req.params.id}`)
+    .then(results => {
+      res.send(results.data);
+    })
+    .catch(err => res.status(500).send(err));
+});
+
 module.exports = app;
