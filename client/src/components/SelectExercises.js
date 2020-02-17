@@ -30,7 +30,6 @@ export default class selectExercises extends Component {
     this.setState({ showModal: false });
   };
 
-  //this function is to show more information about the exercise the user clicks on. I want to make it come up in a pop up box.
   showExercise(exercise, type) {
     this.setState({
       exercise,
@@ -38,7 +37,7 @@ export default class selectExercises extends Component {
     });
     this.showModal();
   }
-  //this function is to send data (the exercise the user has selected)back to the parent App.js to be stored in the selectedExercises array.
+
   handleClick() {
     this.props.addExercise(this.state.exercise, this.state.type);
     this.hideModal();
