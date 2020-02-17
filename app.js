@@ -4,8 +4,9 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
+var heartExercisesRouter = require("./routes/heart_exercises");
+var mindExercisesRouter = require("./routes/mind_exercises");
+var bodyExercisesRouter = require("./routes/body_exercises");
 
 var app = express();
 
@@ -15,8 +16,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
+app.use("/mind_exercises", mindExercisesRouter);
+app.use("/heart_exercises", heartExercisesRouter);
+app.use("/body_exercises", bodyExercisesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -32,80 +34,6 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.send("error");
-});
-
-app.get("/heart_exercises", (req, res) => {
-  db("SELECT * FROM heart_exercises ORDER BY id ASC;")
-    .then(results => {
-      res.send(results.data);
-    })
-    .catch(err => res.status(500).send(err));
-});
-
-app.get("/heart_exercises/:id", (req, res) => {
-  db(`SELECT * FROM heart_exercises WHERE id = ${req.params.id}`)
-    .then(results => {
-      res.send(results.data);
-    })
-    .catch(err => res.status(500).send(err));
-});
-
-app.post("/heart_exercises", (req, res) => {
-  db(
-    `INSERT INTO heart_exercises (title, time, description, tips, img) VALUES ("${req.body.title}, ${req.body.time}, ${req.body.description}, ${req.body.tips}, ${req.body.img}");`
-  )
-    .then(results => {
-      db("SELECT * FROM items ORDER BY id ASC;")
-        .then(results => {
-          res.send(results.data);
-        })
-        .catch(err => res.status(500).send(err));
-    })
-    .catch(err => res.status(500).send(err));
-});
-
-app.delete("/heart_exercises/:id", (req, res) => {
-  db(`DELETE FROM heart_exercises WHERE id = ${req.params.id}`)
-    .then(results => {
-      db("SELECT * FROM heart_exercises ORDER BY id ASC;")
-        .then(results => {
-          res.send(results.data);
-        })
-        .catch(err => res.status(500).send(err));
-    })
-    .catch(err => res.status(500).send(err));
-});
-
-app.get("/mind_exercises", (req, res) => {
-  db("SELECT * FROM mind_exercises ORDER BY id ASC;")
-    .then(results => {
-      res.send(results.data);
-    })
-    .catch(err => res.status(500).send(err));
-});
-
-app.get("/mind_exercises/:id", (req, res) => {
-  db(`SELECT * FROM mind_exercises WHERE id = ${req.params.id}`)
-    .then(results => {
-      res.send(results.data);
-    })
-    .catch(err => res.status(500).send(err));
-});
-
-app.get("/body_exercises", (req, res) => {
-  db("SELECT * FROM body_exercises ORDER BY id ASC;")
-    .then(results => {
-      res.send(results.data);
-    })
-    .catch(err => res.status(500).send(err));
-});
-
-app.get("/body_exercises/:id", (req, res) => {
-  db(`SELECT * FROM body_exercises WHERE id = ${req.params.id}`)
-    .then(results => {
-      res.send(results.data);
-    })
-    .catch(err => res.status(500).send(err));
 });
 
 module.exports = app;
