@@ -2,20 +2,15 @@ var express = require("express");
 var router = express.Router();
 var db = require("../model/helper");
 
-/* GET home page. */
-router.get("/", function(req, res, next) {
-  res.render("index", { title: "Express" });
-});
-
-router.get("/heart_exercises", (req, res) => {
-  db("SELECT * FROM heart_exercises ORDER BY id ASC;")
+router.get("/", (req, res) => {
+  db("SELECT * FROM heart_exercises;")
     .then(results => {
       res.send(results.data);
     })
     .catch(err => res.status(500).send(err));
 });
 
-router.get("/heart_exercises/:id", (req, res) => {
+router.get("/:id", (req, res) => {
   db(`SELECT * FROM heart_exercises WHERE id = ${req.params.id}`)
     .then(results => {
       res.send(results.data);
@@ -23,7 +18,7 @@ router.get("/heart_exercises/:id", (req, res) => {
     .catch(err => res.status(500).send(err));
 });
 
-router.post("/heart_exercises", (req, res) => {
+router.post("/", (req, res) => {
   db(
     `INSERT INTO heart_exercises (title, time, description, tips, img) VALUES ("${req.body.title}, ${req.body.time}, ${req.body.description}, ${req.body.tips}, ${req.body.img}");`
   )
@@ -37,7 +32,7 @@ router.post("/heart_exercises", (req, res) => {
     .catch(err => res.status(500).send(err));
 });
 
-router.delete("/heart_exercises/:id", (req, res) => {
+router.delete("/:id", (req, res) => {
   db(`DELETE FROM heart_exercises WHERE id = ${req.params.id}`)
     .then(results => {
       db("SELECT * FROM heart_exercises ORDER BY id ASC;")

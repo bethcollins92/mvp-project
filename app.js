@@ -17,8 +17,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/mind_exercises", mindExercisesRouter);
-// app.use("/heart_exercises", heartExercisesRouter);
-// app.use("/body_exercises", bodyExercisesRouter);
+app.use("/heart_exercises", heartExercisesRouter);
+app.use("/body_exercises", bodyExercisesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
