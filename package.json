@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "migrate": "node model/database.js",
     "start": "nodemon ./bin/www",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
