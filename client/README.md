@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Introduction
+
+This is an app for the user to select exercises to complete every day. Each lasts only 5 minutes, and the user must choose one from each health category. The app will create a plan for the person and set the times they should do the exercises every day.
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -19,6 +23,8 @@ Run `yarn` on root folder to install dependencies related to Express.
 - You can test your API in `http://localhost:5000/api`
 
 ## Database layout
+
+![See below the layout of the database tables](https://i.imgur.com/FwKyVPg.png)
 
 ## Learn More
 
