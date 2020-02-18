@@ -23,7 +23,7 @@ router.post("/", (req, res) => {
     `INSERT INTO heart_exercises (title, time, description, tips, img) VALUES ("${req.body.title}, ${req.body.time}, ${req.body.description}, ${req.body.tips}, ${req.body.img}");`
   )
     .then(results => {
-      db("SELECT * FROM items ORDER BY id ASC;")
+      db("SELECT * FROM heart_exercises ORDER BY id ASC;")
         .then(results => {
           res.send(results.data);
         })

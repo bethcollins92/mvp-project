@@ -3,8 +3,57 @@ import React, { Component } from "react";
 export default class plan extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      heartPlan: [
+        this.props.selectedExercises.heart.title,
+        this.props.selectedExercises.heart.img,
+        this.props.selectedTime.heart
+      ],
+      mindPlan: [
+        this.props.selectedExercises.mind.title,
+        this.props.selectedExercises.mind.img,
+        this.props.selectedTime.mind
+      ],
+      bodyPlan: [
+        this.props.selectedExercises.body.title,
+        this.props.selectedExercises.body.img,
+        this.props.selectedTime.body
+      ]
+    };
   }
+
+  addToPlan = () => {
+    fetch("./your_plan", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: this.props.selectedExercises.heart.title,
+        img: this.props.selectedExercises.heart.img,
+        time: this.props.selectedTime.heart
+      })
+    });
+
+    fetch("./your_plan", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: this.props.selectedExercises.mind.title,
+        img: this.props.selectedExercises.mind.img,
+        time: this.props.selectedTime.mind
+      })
+    });
+
+    fetch("./your_plan", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: this.props.selectedExercises.body.title,
+        img: this.props.selectedExercises.body.img,
+        time: this.props.selectedTime.body
+      })
+    }).then();
+  };
+
   render() {
     return (
       <div className="container">
@@ -71,6 +120,10 @@ export default class plan extends Component {
             </div>
           </div>
         )}
+
+        <button onClick={() => this.addToPlan()} className="btn btn-group-info">
+          Save
+        </button>
       </div>
     );
   }
