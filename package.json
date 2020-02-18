@@ -13,16 +13,20 @@
     "nodemon": "^2.0.2"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "node-cron": "^2.0.3"
-=======
+    "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.4",
     "core-util-is": "^1.0.2",
+    "debug": "^4.1.1",
+    "depd": "^2.0.0",
     "dotenv": "^8.2.0",
+    "encodeurl": "^1.0.2",
+    "escape-html": "^1.0.3",
     "express": "^4.17.1",
     "http-errors": "^1.7.3",
+    "merge-descriptors": "^1.0.1",
     "morgan": "^1.9.1",
-    "mysql": "^2.18.1"
->>>>>>> upstream
+    "mysql": "^2.18.1",
+    "node-cron": "^2.0.3",
+    "statuses": "^1.5.0"
   }
 }

@@ -38,8 +38,8 @@ app.use(function(err, req, res, next) {
 });
 
 //cron jobs
-cron.schedule("* * * * *", function() {
-  console.log("running a task every minute");
-});
+// cron.schedule("* * * * *", function() {
+//   console.log("running a task every minute");
+// });
 
 module.exports = app;

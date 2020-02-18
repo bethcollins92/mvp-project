@@ -87,7 +87,6 @@ class App extends React.Component {
             <Switch>
               <Route path="/exercises">
                 <SelectExercises
-                  data={this.state.data}
                   heart={this.state.heart}
                   mind={this.state.mind}
                   body={this.state.body}

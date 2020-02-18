@@ -52,11 +52,3 @@ con.connect(function(err) {
 
   con.end();
 });
-
-// CREATE TABLE `your_plan` (
-// 	`id` INT NOT NULL AUTO_INCREMENT,
-// 	`title` INT NOT NULL AUTO_INCREMENT,
-// 	`img` INT NOT NULL AUTO_INCREMENT,
-// 	`time` INT NOT NULL AUTO_INCREMENT,
-// 	PRIMARY KEY (`id`)
-// );
