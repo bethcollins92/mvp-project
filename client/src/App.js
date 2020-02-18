@@ -7,7 +7,6 @@ import About from "./components/About";
 import Plan from "./components/Plan";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -28,7 +27,6 @@ class App extends React.Component {
       }
     };
   }
-
   componentDidMount = () => {
     fetch("/heart_exercises")
       .then(res => res.json())
@@ -41,7 +39,6 @@ class App extends React.Component {
       .catch(err => {
         this.setState({ error: err });
       });
-
     fetch("/mind_exercises")
       .then(res => res.json())
       .then(json => {
@@ -53,7 +50,6 @@ class App extends React.Component {
       .catch(err => {
         this.setState({ error: err });
       });
-
     fetch("/body_exercises")
       .then(res => res.json())
       .then(json => {
@@ -66,20 +62,17 @@ class App extends React.Component {
         this.setState({ error: err });
       });
   };
-
   addExercise(exercise, type) {
     this.setState({
       selectedExercises: { ...this.state.selectedExercises, [type]: exercise }
     });
   }
-
   addTime(event, type) {
     console.log({ event, type });
     this.setState({
       selectedTime: { ...this.state.selectedTime, [type]: event }
     });
   }
-
   render() {
     return (
       <Router>
@@ -88,14 +81,13 @@ class App extends React.Component {
             Feel Better in 5
           </h1>
         </div>
-
         <div>
           <div>
             <NavBar />
-
             <Switch>
               <Route path="/exercises">
                 <SelectExercises
+                  data={this.state.data}
                   heart={this.state.heart}
                   mind={this.state.mind}
                   body={this.state.body}
@@ -114,7 +106,6 @@ class App extends React.Component {
                   selectedTime={this.state.selectedTime}
                 />
               </Route>
-
               <Route path="/">
                 <Home />
               </Route>
@@ -125,5 +116,4 @@ class App extends React.Component {
     );
   }
 }
-
 export default App;

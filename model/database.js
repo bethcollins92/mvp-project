@@ -42,6 +42,14 @@ con.connect(function(err) {
     console.log("Closing...");
   });
 
+  sql = `DROP TABLE if exists your_plan; CREATE TABLE your_plan (id INT NOT NULL AUTO_INCREMENT,title INT NOT NULL AUTO_INCREMENT,img INT NOT NULL AUTO_INCREMENT,time INT NOT NULL AUTO_INCREMENT,PRIMARY KEY (id));`;
+  con.query(sql, function(err, result) {
+    if (err) throw err;
+    console.log("Table creation `your_plan` was successful!");
+
+    console.log("Closing...");
+  });
+
   con.end();
 });
 
