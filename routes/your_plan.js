@@ -19,7 +19,7 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
   db(
-    `INSERT INTO your_plan (title, img, time) VALUES ("${req.body.title}, ${req.body.time}, ${req.body.description}, ${req.body.tips}, ${req.body.img}");`
+    `INSERT INTO your_plan (title, img, time) VALUES ("${req.body.title}, ${req.body.img}, ${req.body.time},");`
   )
     .then(results => {
       db("SELECT * FROM heart_exercises ORDER BY id ASC;")
