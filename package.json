@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "migrate": "node model/database.js",
+    "seed": "node model/seed.js",
     "start": "nodemon ./bin/www",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",

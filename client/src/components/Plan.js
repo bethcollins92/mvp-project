@@ -32,26 +32,6 @@ export default class plan extends Component {
         time: this.props.selectedTime.heart
       })
     });
-
-    fetch("./your_plan", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        title: this.props.selectedExercises.mind.title,
-        img: this.props.selectedExercises.mind.img,
-        time: this.props.selectedTime.mind
-      })
-    });
-
-    fetch("./your_plan", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        title: this.props.selectedExercises.body.title,
-        img: this.props.selectedExercises.body.img,
-        time: this.props.selectedTime.body
-      })
-    }).then();
   };
 
   render() {
