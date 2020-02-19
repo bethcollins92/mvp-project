@@ -2,11 +2,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## users
 
-The app is for anyone who is looking to improve their health and wellbeing, without having to find more time in their already busy lives. It suits people of all ages, and all backgrounds, as the exercises and activities don't cost any money and only take up 5 minutes of your time. It suits a 30 something who already runs 3 times a week but wants to improve their all round health, or a lady in her 80's who wants to improve her mobility. Everyone will feel the benefits of fitting these 5 minute health snacks into their lives.
+The app is for anyone who is looking to improve their health and wellbeing, without having to find more time in their already busy lives. It suits people of all ages, and all backgrounds, as the exercises and activities don't cost any money and only take 5 minutes to complete. It suits a 30 something who already runs 3 times a week but wants to improve their all round health, or a lady in her 80's who wants to improve her mobility. Everyone will feel the benefits of fitting these 5 minute health snacks into their lives.
 
 ## Introduction
 
-This app is designed for users to be able to select 3 exercises from the database to complete each day. Each lasts only 5 minutes, and the user must choose one from each health category. The app allows the user to select one exercise from each category, and add it to their plan to carry out every day at the same time, (future feature will include notifications). Evidence has shown that to include a new habbit in your every day life, the most effective way is to do the same thing at the same time everyday.
+This app is designed for users to be able to select 3 exercises from the database to complete each day. Each lasts only 5 minutes, and the user must choose one from each health category. The app allows the user to select one exercise from each category, and add it to their plan to carry out every day at the same time, (future feature will include notifications). Evidence has shown that to include a new habit in your every day life, the most effective way is to do the same thing at the same time everyday.
 
 ## Available Scripts
 
