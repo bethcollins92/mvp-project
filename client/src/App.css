@@ -82,3 +82,7 @@
 .display-none {
   display: none;
 }
+
+#save-button {
+  position: relative;
+}

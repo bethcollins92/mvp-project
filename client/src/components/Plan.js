@@ -113,7 +113,7 @@ export default class plan extends Component {
           </div>
         )}
 
-        <button onClick={() => this.addToPlan()} className="btn btn-group-info">
+        <button className="btn btn-group-info" onClick={() => this.addToPlan()}>
           Save
         </button>
       </div>
