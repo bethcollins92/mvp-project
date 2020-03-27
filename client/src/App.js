@@ -7,6 +7,7 @@ import About from "./components/About";
 import Plan from "./components/Plan";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
+import Login from "./components/Login";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -104,6 +105,9 @@ class App extends React.Component {
                   selectedExercises={this.state.selectedExercises}
                   selectedTime={this.state.selectedTime}
                 />
+              </Route>
+              <Route path="/login">
+                <Login />
               </Route>
               <Route path="/">
                 <Home />
