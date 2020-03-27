@@ -61,6 +61,7 @@ class NavBar extends Component {
               </Link>
             </li>
             <li
+              id="login-navbar"
               className={
                 "nav-item" +
                 (this.props.location.pathname === "/login" ? " active" : "")
