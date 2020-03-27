@@ -113,7 +113,11 @@ export default class plan extends Component {
           </div>
         )}
 
-        <button className="btn btn-group-info" onClick={() => this.addToPlan()}>
+        <button
+          id="save-button"
+          onClick={() => this.addToPlan()}
+          className="row justify-content-center"
+        >
           Save
         </button>
       </div>
