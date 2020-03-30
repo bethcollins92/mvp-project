@@ -10,7 +10,7 @@ export default function Login() {
         <div className="row">
           <div className="col card-body">
             <div class="form-group">
-              <h3 id="login-title">Login</h3>
+              <h3 id="login-title"> Login </h3>
               <label for="exampleInputEmail1">Email address</label>
               <input
                 type="email"

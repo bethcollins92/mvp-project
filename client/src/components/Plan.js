@@ -22,30 +22,6 @@ export default class plan extends Component {
     };
   }
 
-  addToPlan = () => {
-    fetch("./your_plan", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(
-        {
-          title: this.props.selectedExercises.heart.title,
-          img: this.props.selectedExercises.heart.img,
-          time: this.props.selectedTime.heart
-        },
-        {
-          title: this.props.selectedExercises.mind.title,
-          img: this.props.selectedExercises.mind.img,
-          time: this.props.selectedTime.mind
-        },
-        {
-          title: this.props.selectedExercises.body.title,
-          img: this.props.selectedExercises.body.img,
-          time: this.props.selectedTime.body
-        }
-      )
-    });
-  };
-
   render() {
     return (
       <div className="container">
@@ -112,14 +88,6 @@ export default class plan extends Component {
             </div>
           </div>
         )}
-
-        <button
-          id="save-button"
-          onClick={() => this.addToPlan()}
-          className="row justify-content-center"
-        >
-          Save
-        </button>
       </div>
     );
   }
