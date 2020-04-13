@@ -18,7 +18,7 @@ export default class selectExercises extends Component {
     this.state = {
       exercise: {},
       type: "",
-      showModal: false
+      showModal: false,
     };
   }
 
@@ -33,7 +33,7 @@ export default class selectExercises extends Component {
   showExercise(exercise, type) {
     this.setState({
       exercise,
-      type
+      type,
     });
     this.showModal();
   }
@@ -66,7 +66,7 @@ export default class selectExercises extends Component {
                 <p>{this.state.exercise.description}</p>
                 <p>{this.state.exercise.tips}</p>
                 <input
-                  onChange={event => this.handleChange(event)}
+                  onChange={(event) => this.handleChange(event)}
                   type="time"
                 ></input>
                 <button

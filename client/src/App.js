@@ -8,6 +8,8 @@ import Plan from "./components/Plan";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
 import Login from "./components/Login";
+import Signup from "./components/Signup";
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -19,61 +21,64 @@ class App extends React.Component {
       selectedExercises: {
         heart: {},
         mind: {},
-        body: {}
+        body: {},
       },
       selectedTime: {
         heart: "",
         mind: "",
-        body: ""
-      }
+        body: "",
+      },
+      email: "",
+      password: "",
     };
   }
   componentDidMount = () => {
     fetch("/heart_exercises")
-      .then(res => res.json())
-      .then(json => {
+      .then((res) => res.json())
+      .then((json) => {
         this.setState({
-          heart: json
+          heart: json,
         });
         console.log(json);
       })
-      .catch(err => {
+      .catch((err) => {
         this.setState({ error: err });
       });
     fetch("/mind_exercises")
-      .then(res => res.json())
-      .then(json => {
+      .then((res) => res.json())
+      .then((json) => {
         this.setState({
-          mind: json
+          mind: json,
         });
         console.log(json);
       })
-      .catch(err => {
+      .catch((err) => {
         this.setState({ error: err });
       });
     fetch("/body_exercises")
-      .then(res => res.json())
-      .then(json => {
+      .then((res) => res.json())
+      .then((json) => {
         this.setState({
-          body: json
+          body: json,
         });
         console.log(json);
       })
-      .catch(err => {
+      .catch((err) => {
         this.setState({ error: err });
       });
   };
   addExercise(exercise, type) {
     this.setState({
-      selectedExercises: { ...this.state.selectedExercises, [type]: exercise }
+      selectedExercises: { ...this.state.selectedExercises, [type]: exercise },
     });
   }
   addTime(event, type) {
     console.log({ event, type });
     this.setState({
-      selectedTime: { ...this.state.selectedTime, [type]: event }
+      selectedTime: { ...this.state.selectedTime, [type]: event },
     });
   }
+
   render() {
     return (
       <Router>
@@ -85,6 +90,7 @@ class App extends React.Component {
         <div>
           <div>
             <NavBar />
+
             <Switch>
               <Route path="/exercises">
                 <SelectExercises
@@ -107,7 +113,10 @@ class App extends React.Component {
                 />
               </Route>
               <Route path="/login">
-                <Login />
+                <Login email={this.email} password={this.password} />
+              </Route>
+              <Route path="/signup">
+                <Signup email={this.email} password={this.password} />
               </Route>
               <Route path="/">
                 <Home />

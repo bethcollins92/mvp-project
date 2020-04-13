@@ -1,42 +1,28 @@
 import React, { useState } from "react";
+import Card from "./Card";
 
-export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+export default function Login(props) {
+  const [email, setEmail] = useState(props.email);
+  const [password, setPassword] = useState(props.email);
+
+  const handleInputL = (name, value) => {
+    name === "email" ? setEmail(value) : setPassword(value);
+  };
+
+  const handleLoginSubmit = () => {};
 
   return (
-    <div className="container">
-      <div className="card shadow" id="login">
-        <div className="row">
-          <div className="col card-body">
-            <div class="form-group">
-              <h3 id="login-title"> Login </h3>
-              <label for="exampleInputEmail1">Email address</label>
-              <input
-                type="email"
-                class="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
-              ></input>
-              <small id="emailHelp" class="form-text text-muted">
-                We'll never share your email with anyone else.
-              </small>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input
-                type="password"
-                class="form-control"
-                id="exampleInputPassword1"
-              ></input>
-            </div>
-
-            <button id="submit" type="submit" className="btn btn-light">
-              Submit
-            </button>
-          </div>
-        </div>
-      </div>
+    <div>
+      <Card
+        name={"Login"}
+        handleInputL={(name, value) => {
+          handleInputL(name, value);
+        }}
+        email={email}
+        password={password}
+        handleLoginSubmit={() => handleLoginSubmit()}
+      />
+      ;
     </div>
   );
 }
