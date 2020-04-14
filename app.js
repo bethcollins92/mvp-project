@@ -4,6 +4,8 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
+var signUpRouter = require("./routes/users");
+var loginAttemptRouter = require("./routes/users");
 var heartExercisesRouter = require("./routes/heart_exercises");
 var mindExercisesRouter = require("./routes/mind_exercises");
 var bodyExercisesRouter = require("./routes/body_exercises");
@@ -17,17 +19,20 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use("/users/signup", signUpRouter);
+app.use("/users", loginAttemptRouter);
 app.use("/mind_exercises", mindExercisesRouter);
 app.use("/heart_exercises", heartExercisesRouter);
 app.use("/body_exercises", bodyExercisesRouter);
 app.use("/your_plan", yourPlanRouter);
+
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get("env") === "development" ? err : {};
@@ -36,10 +41,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.send("error");
 });
-
-//cron jobs
-// cron.schedule("* * * * *", function() {
-//   console.log("running a task every minute");
-// });
 
 module.exports = app;

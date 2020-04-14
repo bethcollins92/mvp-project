@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import DisplayExercises from "./DisplayExercises";
 
 const Modal = ({ showModal, children }) => {
   const showHideClassName = showModal
@@ -84,30 +85,10 @@ export default class selectExercises extends Component {
             </button>
           </div>
         </Modal>
-        <div id="exercise-section">
-          <h4 className="mt-4">Heart</h4>
-          <div className="row mt-5">
-            {this.props.heart.map((exercise, index) => (
-              <div
-                key={index}
-                onClick={() => this.showExercise(exercise, "heart")}
-                className="col-lg-3 col-md-5 col-sm-6"
-              >
-                <div className="card shadow" id="card">
-                  <img
-                    src={exercise.img}
-                    className="card-img-top"
-                    alt="alt"
-                    id="card-image"
-                  />
-                  <div className="card-body">
-                    <h4 className="card-title">{exercise.title}</h4>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        <DisplayExercises
+          name={"Heart"}
+          showExercise={(exercise, type) => this.showExercise(exercise, type)}
+        />
         <div id="exercise-section">
           <h4 className="mt-4">Mind</h4>
           <div className="row mt-5">

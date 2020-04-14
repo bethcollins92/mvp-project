@@ -59,9 +59,9 @@ export default function Card(props) {
               type="submit"
               className="btn btn-light"
               onClick={
-                props.name === "Sign up"
-                  ? (e) => props.handleSignupSubmit(e)
-                  : (e) => props.handleLoginSubmit(e)
+                props.name === "Login"
+                  ? (e) => props.handleLoginSubmit(e)
+                  : (e) => props.handleSignupSubmit(e)
               }
             >
               Submit
